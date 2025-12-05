@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: 'app-votacao'
+    static_configs:
+      - targets: ['app-votacao:5000']
+        labels:
+          app: 'sistema-votacao'
+    metrics_path: '/metrics'
